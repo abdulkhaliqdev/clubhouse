@@ -13,12 +13,12 @@
   <body class="has-background-primary-light">
     <% if  flash[:notice] %>
       <div class="notification is-primary global-notification">
-        <p class="notice"><% notice %></p>
+        <p class="notice"><%= notice %></p>
       </div>
     <% end %>
     <% if  flash[:alert] %>
       <div class="notification is-danger global-notification">
-        <p class="alert"><% alert %></p>
+        <p class="alert"><%= alert %></p>
       </div>
     <% end %>
     <nav class="navbar has-background-link-light" role="navigation" aria-label="main navigation">
@@ -35,12 +35,21 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
+            <% if user_signed_in? %>
+              <p class="control" style="margin-right:3px">
+                <%= link_to current_user.name, edit_user_registration_path, class: "button is-primary is-inverted" %>
+              </p>
+              <p class="control">
+                <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "button is-primary" %>
+              </p>
+            <% else %>
               <p class="control" style="margin-right:3px">
                 <%= link_to 'Sign In', new_user_session_path, class: "button is-primary" %>
               </p>
               <p class="control">
                 <%= link_to 'Sign Up', new_user_registration_path, class: "button is-primary" %>
               </p>
+            <% end %>
             </div>
           </div>
         </div>
