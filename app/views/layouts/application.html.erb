@@ -11,6 +11,41 @@
   </head>
 
   <body>
+    <% if  flash[:notice] %>
+      <div class="notification is-primary global-notification">
+        <p class="notice"><% notice %></p>
+      </div>
+    <% end %>
+    <% if  flash[:alert] %>
+      <div class="notification is-danger global-notification">
+        <p class="alert"><% alert %></p>
+      </div>
+    <% end %>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: 'navbar-item' do %>
+          <h1 class="title is-5">ClubHouse</h1>
+        <% end %>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light">
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
