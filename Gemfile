@@ -36,7 +36,7 @@ gem 'simple_form'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
 group :development, :test do
- gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :production do
