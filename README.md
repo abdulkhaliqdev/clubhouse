@@ -38,16 +38,22 @@ Or download this repository and unzip it.
 
 ### Installation
 
-From the project's root directory execute 'bundle install' to install the necessary gems:
+- From the project's root directory execute 'bundle install' to install the necessary gems:
 
 ```
 bundle install
 ```
 
-Then run yarn to install all the node dependancies:
+- Then run yarn to install all the node dependancies:
 
 ```
 yarn
+```
+
+- Make a migration of the database:
+
+```
+rails db:migrate
 ```
 
 ### Usage
